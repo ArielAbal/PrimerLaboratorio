@@ -3,7 +3,9 @@ import os
 import random
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
+
+from POO import BancoPreguntas, Pregunta
 
 try:
     import yaml
@@ -21,6 +23,22 @@ STATE_PATH = Path(__file__).parent / "state.json"
 PROBLEMS_PATH = Path(__file__).parent / "problems.yaml"
 BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN", "")
 CHANNEL_ID = os.getenv("SLACK_CHANNEL_ID", "")
+
+
+DEFAULT_PROBLEMS: List[Dict] = [
+    Pregunta(
+        title="Suma dos números",
+        prompt="Escribe una función suma(a, b) que devuelva a + b.",
+        hints=["Usa operadores aritméticos.", "Devuelve el resultado."],
+        tags=["funciones", "aritmética"],
+    ).to_dict(),
+    Pregunta(
+        title="Área de un rectángulo",
+        prompt="Implementa una función area_rectangulo(base, altura) que calcule el área.",
+        hints=["El área es base * altura.", "Asegúrate de retornar el valor."],
+        tags=["funciones", "geometría"],
+    ).to_dict(),
+]
 
 
 def load_problems() -> List[Dict]:
@@ -115,8 +133,41 @@ def post_to_slack(payload: Dict):
         raise RuntimeError(f"Error Slack: {detail}") from e
 
 
-def cargar_preguntas():
-    raise Exception("Sorry, no hay implementación")
+def cargar_preguntas(preguntas: Optional[List[Pregunta]] = None) -> List[Dict]:
+    if yaml is None:
+        raise RuntimeError("Instala pyyaml para poder cargar preguntas.")
+
+    if preguntas is None:
+        preguntas = [
+            Pregunta(
+                title="Suma dos números",
+                prompt="Escribe una función suma(a, b) que devuelva a + b.",
+                hints=["Usa operadores aritméticos.", "Devuelve el resultado."],
+                tags=["funciones", "aritmética"],
+            ),
+            Pregunta(
+                title="Número par o impar",
+                prompt="Escribe una función es_par(n) que retorne True si n es par y False si es impar.",
+                hints=["Usa el operador % (módulo).", "Si el resto es 0, es par."],
+                tags=["condicionales", "lógica"],
+            ),
+            Pregunta(
+                title="Máximo de dos números",
+                prompt="Implementa una función maximo(a, b) que devuelva el mayor de los dos.",
+                hints=["Compara los valores.", "Usa condiciones if/else."],
+                tags=["condicionales", "comparación"],
+            ),
+        ]
+
+    existentes = load_problems()
+    nuevas = [p.to_dict() for p in preguntas if not any(item.get("title") == p.title for item in existentes)]
+
+    if nuevas:
+        existentes.extend(nuevas)
+        with PROBLEMS_PATH.open("w", encoding="utf-8") as f:
+            yaml.safe_dump(existentes, f, allow_unicode=True, sort_keys=False)
+
+    return existentes
 
 
 def main():
