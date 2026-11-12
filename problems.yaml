@@ -1,0 +1,89 @@
+- title: "Suma dos números"
+  prompt: "Escribe una función suma(a, b) que devuelva a + b."
+  hints:
+    - "Usa operadores aritméticos."
+    - "Devuelve el resultado."
+  tags:
+    - "funciones"
+    - "aritmética"
+
+- title: "Área de un rectángulo"
+  prompt: "Implementa una función area_rectangulo(base, altura) que calcule el área."
+  hints:
+    - "El área es base * altura."
+    - "Asegúrate de retornar el valor."
+  tags:
+    - "funciones"
+    - "geometría"
+
+- title: "Promedio de tres números"
+  prompt: "Crea una función promedio(a, b, c) que devuelva el promedio de los tres valores."
+  hints:
+    - "Suma los valores y divide por 3."
+    - "Usa paréntesis para controlar la operación."
+  tags:
+    - "funciones"
+    - "promedio"
+
+- title: "Número par o impar"
+  prompt: "Escribe una función es_par(n) que retorne True si n es par y False si es impar."
+  hints:
+    - "Usa el operador % (módulo)."
+    - "Si el resto es 0, es par."
+  tags:
+    - "condicionales"
+    - "lógica"
+
+- title: "Máximo de dos números"
+  prompt: "Implementa una función maximo(a, b) que devuelva el mayor de los dos."
+  hints:
+    - "Compara los valores."
+    - "Usa condiciones if/else."
+  tags:
+    - "condicionales"
+    - "comparación"
+
+- title: "Factorial"
+  prompt: "Escribe una función factorial(n) que calcule el factorial de un número entero positivo."
+  hints:
+    - "El factorial de 5 es 5 * 4 * 3 * 2 * 1."
+    - "Usa un bucle o recursión."
+  tags:
+    - "bucles"
+    - "matemática"
+
+- title: "Invertir una cadena"
+  prompt: "Crea una función invertir(texto) que devuelva el texto invertido."
+  hints:
+    - "Podés usar slicing."
+    - "Ejemplo: 'hola' -> 'aloh'."
+  tags:
+    - "strings"
+    - "funciones"
+
+- title: "Contar vocales"
+  prompt: "Implementa una función contar_vocales(texto) que cuente cuántas vocales tiene una cadena."
+  hints:
+    - "Considera a, e, i, o, u."
+    - "Recorre cada carácter."
+  tags:
+    - "strings"
+    - "bucles"
+
+- title: "Lista ordenada"
+  prompt: "Escribe una función esta_ordenada(lista) que devuelva True si la lista está en orden ascendente."
+  hints:
+    - "Compara cada elemento con el siguiente."
+    - "Si alguna comparación falla, devuelve False."
+  tags:
+    - "listas"
+    - "lógica"
+
+- title: "Suma de elementos pares"
+  prompt: "Crea una función suma_pares(lista) que sume sólo los números pares de una lista."
+  hints:
+    - "Usa una condición para filtrar números pares."
+    - "Acumulá la suma en una variable."
+  tags:
+    - "listas"
+    - "acumulación"
