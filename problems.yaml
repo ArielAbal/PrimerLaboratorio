@@ -1,0 +1,89 @@
+- title: "Convertir a mayúsculas"
+  prompt: "Escribe una función convertir_mayusculas(texto) que devuelva el texto en mayúsculas."
+  hints:
+    - "Usa .upper()."
+    - "No modifiques la cadena original."
+  tags:
+    - "strings"
+    - "funciones"
+
+- title: "Calcular la edad"
+  prompt: "Crea una función edad(ano_nacimiento) que calcule la edad en función del año actual."
+  hints:
+    - "Usa el año actual."
+    - "Resta la fecha de nacimiento."
+  tags:
+    - "fechas"
+    - "lógica"
+
+- title: "Filtrar nombres largos"
+  prompt: "Escribe una función nombres_largos(lista) que devuelva solo los nombres con más de 5 letras."
+  hints:
+    - "Recorre la lista."
+    - "Usa len() para la longitud."
+  tags:
+    - "listas"
+    - "filtros"
+
+- title: "Suma de una lista"
+  prompt: "Implementa una función sumar_lista(lista) que devuelva la suma total de sus elementos."
+  hints:
+    - "Usa una variable acumuladora."
+    - "Recorre cada valor."
+  tags:
+    - "listas"
+    - "acumulación"
+
+- title: "Contar palabras"
+  prompt: "Crea una función contar_palabras(texto) que devuelva la cantidad de palabras."
+  hints:
+    - "Usa split()."
+    - "Una frase separada por espacios genera elementos."
+  tags:
+    - "strings"
+    - "listas"
+
+- title: "Elemento repetido"
+  prompt: "Escribe una función repetido(lista) que retorne True si hay algún valor duplicado."
+  hints:
+    - "Compara elementos entre sí."
+    - "Usa una estructura auxiliar si hace falta."
+  tags:
+    - "listas"
+    - "lógica"
+
+- title: "Palíndromo"
+  prompt: "Implementa una función es_palindromo(texto) que determine si una palabra es palíndromo."
+  hints:
+    - "Compara la cadena original con su versión invertida."
+    - "Ignora espacios si hace falta."
+  tags:
+    - "strings"
+    - "lógica"
+
+- title: "Diccionario con nombre y edad"
+  prompt: "Crea una función obtener_edad(persona) que devuelva la edad de un diccionario con las claves nombre y edad."
+  hints:
+    - "Accede por clave."
+    - "Devuelve el valor asociado."
+  tags:
+    - "diccionarios"
+    - "funciones"
+
+- title: "Contar elementos por clave"
+  prompt: "Escribe una función contar_por_categoria(lista) que cuente cuántas veces aparece cada elemento."
+  hints:
+    - "Usa un diccionario como acumulador."
+    - "Cada clave representa un valor."
+  tags:
+    - "diccionarios"
+    - "listas"
+
+- title: "Número primo"
+  prompt: "Implementa una función es_primo(n) que retorne True si n es primo."
+  hints:
+    - "Un número primo tiene exactamente dos divisores."
+    - "Prueba divisores desde 2 hasta la raíz cuadrada."
+  tags:
+    - "matemática"
+    - "bucles"
